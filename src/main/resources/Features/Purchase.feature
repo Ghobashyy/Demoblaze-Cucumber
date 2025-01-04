@@ -26,9 +26,9 @@ Feature: Test Purchase functionality
     When user click on laptops categories
     And user click on product2
     And user click on add product2 to cart
-    Then Product2 added alert "Product added" should be displayed
-    When user accept product2 alert and goes to cart page
-    Then product2 name "Sony vaio i7" and price "790" should be displayed
+    Then Second Product added alert "Product added" should be displayed
+    When user accept second product alert and goes to cart page
+    Then second product name "Sony vaio i7" and price "790" should be displayed
     And total price should be "1580"
     When click on place order
     And enter "Mostafa Ghobashy" "Egypt" "Cairo" "41139874025698" "01" "2025"

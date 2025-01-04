@@ -12,34 +12,34 @@ public class PlaceOrderPage {
     private By name = By.id("name");
     private By country = By.id("country");
     private By city = By.id("city");
-    private By creditcard = By.id("card");
+    private By creditCard = By.id("card");
     private By month = By.id("month");
     private By year = By.id("year");
-    private By purchasebutton = By.xpath("//button[contains(text(),'Purchase')]");
-    private By purchasemessage = By.xpath("//h2[contains(text(),'Thank you')]");
+    private By purchaseButton = By.xpath("//button[contains(text(),'Purchase')]");
+    private By purchaseMessage = By.xpath("//h2[contains(text(),'Thank you')]");
     //Actions
-    public void entername(String namee){
+    public void enterName(String namee){
         driver.findElement(name).sendKeys(namee);
     }
-    public void entercountry(String countryy){
+    public void enterCountry(String countryy){
         driver.findElement(country).sendKeys(countryy);
     }
-    public void entercity(String cityy){
+    public void enterCity(String cityy){
         driver.findElement(city).sendKeys(cityy);
     }
-    public void entercreditcard(String credit){
-        driver.findElement(creditcard).sendKeys(credit);
+    public void enterCreditCard(String credit){
+        driver.findElement(creditCard).sendKeys(credit);
     }
-    public void entermonth(String monthh){
+    public void enterMonth(String monthh){
         driver.findElement(month).sendKeys(monthh);
     }
-    public void enteryear(String yeear){
+    public void enterYear(String yeear){
         driver.findElement(year).sendKeys(yeear);
     }
-    public void clickonpurchasebutton(){
-        driver.findElement(purchasebutton).click();
+    public void clickOnPurchaseButton(){
+        driver.findElement(purchaseButton).click();
     }
-    public String successpurchase(){
-       return driver.findElement(purchasemessage).getText();
+    public String successPurchase(){
+       return driver.findElement(purchaseMessage).getText();
     }
 }

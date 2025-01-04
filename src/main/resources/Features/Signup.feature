@@ -12,6 +12,7 @@ Feature: Test Signup functionality
 
   @Negative
   Scenario: validate user can't signup with invalid data
+    When user click on signup
     When User enter invalid "MostafaGhobashy" and "WeMb21"
     And user click on signup button
     Then Error Signup alert "This user already exist." should be displayed

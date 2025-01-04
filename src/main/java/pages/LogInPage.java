@@ -14,27 +14,32 @@ public class LogInPage {
         this.driver=driver;
     }
     //Locators
-    private By loginusername = By.id("loginusername");
-    private By loginpassword = By.id("loginpassword");
-    private By loginbutton = By.xpath("//button[contains(text(),'Log')]");
-
-    private By loginusertext = By.cssSelector("a[id='nameofuser']");
+    private By loginUsername = By.id("loginusername");
+    private By loginPassword = By.id("loginpassword");
+    private By loginButton = By.xpath("//button[contains(text(),'Log')]");
+    private By loginUserText = By.cssSelector("a[id='nameofuser']");
 
     //Actions
-    public void enterloginusername(String username){
-        driver.findElement(loginusername).sendKeys(username);
+    public void enterLoginUsername(String username){
+        wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+        wait.until(ExpectedConditions.visibilityOf(driver.findElement(loginUsername)));
+        driver.findElement(loginUsername).sendKeys(username);
     }
-    public void enterloginpassword(String password){
-        driver.findElement(loginpassword).sendKeys(password);
+    public void enterLoginPassword(String password){
+        wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+        wait.until(ExpectedConditions.visibilityOf(driver.findElement(loginPassword)));
+        driver.findElement(loginPassword).sendKeys(password);
     }
-    public void clickonloginbutton(){
-        driver.findElement(loginbutton).click();
+    public void clickOnLoginButton(){
+        driver.findElement(loginButton).click();
     }
-    public String getloginusertext(){
-        String text = driver.findElement(loginusertext).getText();
+    public String getLoginUserText(){
+        wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+        wait.until(ExpectedConditions.textToBePresentInElementLocated(By.cssSelector("a[id='nameofuser']"),"Welcome MostafaGhobashy"));
+        String text = driver.findElement(loginUserText).getText();
         return text;
     }
-    public String getloginalerttext(){
+    public String getLoginAlertText(){
         wait = new WebDriverWait(driver,Duration.ofSeconds(10));
         wait.until(ExpectedConditions.alertIsPresent());
         String text = driver.switchTo().alert().getText();

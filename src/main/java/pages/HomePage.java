@@ -9,23 +9,23 @@ public class HomePage {
         this.driver=driver;
     }
     //locators
-    private By signup = By.id("signin2");
-    private By login = By.id("login2");
-    private By laptopscategories = By.xpath("//a[contains(text(),'Laptops')]");
+    private By signUp = By.id("signin2");
+    private By logIn = By.id("login2");
+    private By laptopsCategories = By.xpath("//a[contains(text(),'Laptops')]");
 
 
     //actions
-     public SignUpPage clickonsignup(){
-        driver.findElement(signup).click();
+     public SignUpPage clickOnSignup(){
+        driver.findElement(signUp).click();
         return new SignUpPage(driver);
     }
-    public LogInPage clickonlogin(){
-         driver.findElement(login).click();
+    public LogInPage clickOnLogin(){
+         driver.findElement(logIn).click();
          return new LogInPage(driver);
     }
 
-    public LapTopPage clickonlaptops(){
-         driver.findElement(laptopscategories).click();
+    public LapTopPage clickOnLaptops(){
+         driver.findElement(laptopsCategories).click();
          return new LapTopPage(driver);
     }
 }

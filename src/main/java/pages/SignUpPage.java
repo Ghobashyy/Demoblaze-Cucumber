@@ -16,30 +16,34 @@ public class SignUpPage {
         this.driver=driver;
     }
     //Locators
-    private By signupusername = By.id("sign-username");
-    private By signuppassword = By.id("sign-password");
-    private By signupbutton = By.xpath("//button[contains(text(),'Sign')]");
+    private By signupUsername = By.id("sign-username");
+    private By signupPassword = By.id("sign-password");
+    private By signupButton = By.xpath("//button[contains(text(),'Sign')]");
 
 
     //Actions
-    public void entersignupusername(){
+    public void enterSignupUsername(){
         String username = faker.name().username();
-        driver.findElement(signupusername).sendKeys(username);
+        driver.findElement(signupUsername).sendKeys(username);
     }
-    public void entersignuppassword(){
+    public void enterSignupPassword(){
         String password = faker.name().name();
-        driver.findElement(signuppassword).sendKeys(password);
+        driver.findElement(signupPassword).sendKeys(password);
     }
-    public void enterinvalidsignupusername(String username){
-        driver.findElement(signupusername).sendKeys(username);
+    public void enterInvalidSignupUsername(String username){
+        wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+        wait.until(ExpectedConditions.visibilityOf(driver.findElement(signupUsername)));
+        driver.findElement(signupUsername).sendKeys(username);
     }
-    public void enterinvalidsignuppassword(String password){
-        driver.findElement(signuppassword).sendKeys(password);
+    public void enterInvalidSignupPassword(String password){
+        wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+        wait.until(ExpectedConditions.visibilityOf(driver.findElement(signupPassword)));
+        driver.findElement(signupPassword).sendKeys(password);
     }
-    public void clickonsignupbutton(){
-        driver.findElement(signupbutton).click();
+    public void clickOnSignupButton(){
+        driver.findElement(signupButton).click();
     }
-    public String getsignupalerttext(){
+    public String getSignupAlertText(){
         wait = new WebDriverWait(driver, Duration.ofSeconds(10));
         wait.until(ExpectedConditions.alertIsPresent());
         String text = driver.switchTo().alert().getText();

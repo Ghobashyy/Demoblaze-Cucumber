@@ -9,16 +9,16 @@ public class LapTopPage {
         this.driver = driver;
     }
     //Locators
-    private By product1 = By.xpath("//a[contains(text(),'vaio i5')]");
-    private By product2 = By.xpath("//a[contains(text(),'vaio i7')]");
+    private By firstProduct = By.xpath("//a[contains(text(),'vaio i5')]");
+    private By secondProduct = By.xpath("//a[contains(text(),'vaio i7')]");
 
     //Actions
-    public Product1Page clickonproduct1(){
-        driver.findElement(product1).click();
-        return new Product1Page(driver);
+    public FirstProductPage clickOnFirstProduct(){
+        driver.findElement(firstProduct).click();
+        return new FirstProductPage(driver);
     }
-    public Product2Page clickonproduct2(){
-        driver.findElement(product2).click();
-        return new Product2Page(driver);
+    public SecondProductPage clickOnSecondProduct(){
+        driver.findElement(secondProduct).click();
+        return new SecondProductPage(driver);
     }
 }
